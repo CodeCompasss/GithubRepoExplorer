@@ -1,0 +1,253 @@
+/* src/components/HeroSection.css */
+.hero {
+    position: relative;
+    height: 60vh; /* Base height for mobile */
+    width: 100%;
+    background: url('https://source.unsplash.com/1600x900/?space,stars,planets') no-repeat center center/cover,
+                radial-gradient(circle, rgba(0,0,0,0.9) 10%, rgba(0,0,0,0.6) 70%);
+    background-size: cover;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+    animation: fadeIn 1.5s ease-in;
+  }
+  
+  .hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.4);
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+  }
+  
+  .hero-content {
+    position: relative;
+    z-index: 10;
+    max-width: 90%; /* Base width for mobile */
+    padding: 0 1rem;
+    margin: 0 auto;
+  }
+  
+  .hero-title {
+    font-size: 1.5rem; /* Base size for mobile */
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    animation: slideUp 1s ease-out;
+    font-family: 'Roboto', sans-serif;
+  }
+  
+  .hero-subtitle {
+    font-size: 0.9rem; /* Base size for mobile */
+    margin-bottom: 1rem;
+    animation: slideUp 1.4s ease-out;
+  }
+  
+  .hero-button {
+    display: inline-block;
+    padding: 0.8rem 1.5rem; /* Base size for mobile */
+    font-size: 0.9rem;
+    color: #fff;
+    background-color: #007bff;
+    border-radius: 30px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+    animation: fadeIn 2s ease;
+  }
+  
+  .hero-button:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Starfield Background Effect */
+  .star {
+    position: absolute;
+    background-color: white;
+    border-radius: 50%;
+    animation: starTwinkle 1.5s infinite ease-in-out;
+  }
+  
+  .star-small {
+    width: 1px;
+    height: 1px;
+    animation-duration: 2s;
+  }
+  
+  .star-medium {
+    width: 2px;
+    height: 2px;
+    animation-duration: 1.5s;
+  }
+  
+  .star-large {
+    width: 3px;
+    height: 3px;
+    animation-duration: 1s;
+  }
+  
+  @keyframes starTwinkle {
+    0% { opacity: 0.5; }
+    50% { opacity: 1; }
+    100% { opacity: 0.5; }
+  }
+  
+  /* Randomly placing stars */
+  .star-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100%;
+    pointer-events: none;
+  }
+  
+  .shooting-star {
+    position: absolute;
+    width: 1px;
+    height: 50px;
+    background: linear-gradient(white, transparent);
+    opacity: 0;
+    transform: rotate(315deg);
+    animation: realisticShoot 4s ease-in-out infinite;
+    filter: drop-shadow(0 0 3px white);
+    z-index: 4;
+  }
+  
+  @keyframes realisticShoot {
+    0% {
+      transform: translate(0, 0) rotate(315deg);
+      opacity: 0;
+    }
+    10% {
+      opacity: 1;
+    }
+    100% {
+      transform: translate(150px, 150px) rotate(315deg);
+      opacity: 0;
+    }
+  }
+  
+  .planet-orbit {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform-origin: center center;
+    z-index: 2;
+    animation: orbitAround linear infinite;
+  }
+  
+  .planet {
+    position: absolute;
+    border-radius: 50%;
+    box-shadow: 0 0 5px rgba(255, 255, 255, 0.4);
+    transition: transform 0.2s ease-in-out;
+  }
+  
+  @keyframes orbitAround {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  
+  .search-bar {
+    margin-top: 1rem;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
+  
+  .search-input {
+    padding: 0.5rem 1rem;
+    width: 100%;
+    max-width: 250px; /* Base width for mobile */
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 25px;
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    font-size: 0.9rem; /* Base size for mobile */
+    outline: none;
+    transition: border-color 0.3s ease;
+  }
+  
+  .search-input::placeholder {
+    color: rgba(255, 255, 255, 0.6);
+  }
+  
+  .search-input:focus {
+    border-color: #88f3ff;
+  }
+  
+  /* Media Queries */
+  @media (min-width: 768px) { /* Tablet */
+    .hero {
+      height: 80vh;
+    }
+    .hero-content {
+      max-width: 800px;
+      padding: 0 2rem;
+    }
+    .hero-title {
+      font-size: 2.5rem;
+    }
+    .hero-subtitle {
+      font-size: 1.1rem;
+    }
+    .hero-button {
+      padding: 1rem 2rem;
+      font-size: 1rem;
+    }
+    .star-small {
+      width: 2px;
+      height: 2px;
+    }
+    .star-medium {
+      width: 4px;
+      height: 4px;
+    }
+    .star-large {
+      width: 6px;
+      height: 6px;
+    }
+    .shooting-star {
+      width: 2px;
+      height: 100px;
+      filter: drop-shadow(0 0 6px white);
+    }
+    @keyframes realisticShoot {
+      100% {
+        transform: translate(200px, 200px) rotate(315deg);
+      }
+    }
+    .planet {
+      box-shadow: 0 0 10px rgba(255, 255, 255, 0.4);
+    }
+    .search-input {
+      max-width: 400px;
+      font-size: 1rem;
+    }
+  }
+  
+  @media (min-width: 1024px) { /* Desktop */
+    .hero-content {
+      padding: 0 3rem;
+    }
+    .shooting-star {
+      height: 150px;
+    }
+    @keyframes realisticShoot {
+      100% {
+        transform: translate(300px, 300px) rotate(315deg);
+      }
+    }
+    .search-input {
+      max-width: 500px;
+    }
+  }

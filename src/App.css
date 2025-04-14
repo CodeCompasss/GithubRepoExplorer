@@ -1,0 +1,54 @@
+/* src/App.css */
+html, body {
+  margin: 0;
+  padding: 0;
+  width: auto;
+  overflow-x: hidden; /* Prevent horizontal scrollbar */
+  overflow-y: auto; /* Allow vertical scrolling only if content exceeds viewport */
+}
+
+.app-container {
+  max-width: 1370px;
+  background: #0a0a23;
+  color: #fff;
+  min-height: 100vh;
+  padding-top: 60px; /* Space for fixed navbar */
+  display: flex;
+  flex-direction: column;
+  overflow-x: hidden; /* Ensure no horizontal overflow */ 
+}
+
+.app-container h1 {
+  font-size: 2.5rem;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.app-container p {
+  text-align: center;
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.app-container h2 {
+  font-size: 2rem;
+  margin: 2rem 0 1rem;
+  color: #88f3ff;
+}
+
+.app-container > * {
+  flex: 1 0 auto;
+}
+
+.repo-carousel {
+  flex-grow: 1;
+  min-height: 300px; /* Consistent with card height */
+}
+
+.separator{
+  padding-left: 100px;
+  padding-right: 100px;
+  margin-left: 100px;
+  margin-right: 100px;
+}

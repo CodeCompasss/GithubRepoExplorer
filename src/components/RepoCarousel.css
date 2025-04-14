@@ -1,0 +1,205 @@
+/* src/components/RepoCarousel.css */
+.repo-carousel {
+  width: 100%;
+  margin: 0;
+  padding: 0.5rem 0;
+  position: relative;
+  min-height: 200px;
+  box-sizing: border-box;
+}
+
+.carousel-slide {
+  padding: 0 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 250px;
+  box-sizing: border-box;
+  opacity: 0;
+  transform: perspective(800px) rotateY(90deg);
+  animation: cardFlip 0.5s ease-in-out forwards;
+}
+
+.carousel-slide.slick-active {
+  opacity: 1;
+  transform: perspective(800px) rotateY(0deg);
+}
+
+.no-results {
+  text-align: center;
+  padding: 1rem;
+  color: #fff;
+  background: rgba(0, 0, 0, 0.7);
+  border-radius: 10px;
+  min-height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.slick-prev,
+.slick-next {
+  z-index: 10;
+  width: 25px;
+  height: 25px;
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.slick-prev:hover,
+.slick-next:hover {
+  background: rgba(0, 0, 0, 0.8);
+}
+
+.slick-prev:before,
+.slick-next:before {
+  font-size: 15px;
+  color: #88f3ff;
+}
+
+.slick-prev {
+  left: -30px;
+}
+
+.slick-next {
+  right: -30px;
+}
+
+.slick-dots {
+  bottom: -20px;
+}
+
+.slick-dots li button:before {
+  font-size: 8px;
+  color: #88f3ff;
+}
+
+.slick-dots li.slick-active button:before {
+  color: #fff;
+}
+
+.slick-list {
+  padding: 0;
+  overflow: hidden;
+}
+
+.slick-slider {
+  transition: transform 0.5s ease-in-out;
+}
+
+.slick-track {
+  display: flex;
+  align-items: center;
+}
+
+/* Animations */
+@keyframes cardFlip {
+  0% {
+    opacity: 0;
+    transform: perspective(800px) rotateY(90deg);
+  }
+  100% {
+    opacity: 1;
+    transform: perspective(800px) rotateY(0deg);
+  }
+}
+
+/* Responsive Styles */
+@media (max-width: 1024px) {
+  .repo-carousel {
+    padding: 0.5rem 0;
+    min-height: 250px;
+  }
+  .carousel-slide {
+    padding: 0 8px;
+    max-width: 300px;
+  }
+  .no-results {
+    padding: 1rem;
+    min-height: 200px;
+  }
+  .slick-prev,
+  .slick-next {
+    width: 30px;
+    height: 30px;
+  }
+  .slick-prev:before,
+  .slick-next:before {
+    font-size: 18px;
+  }
+  .slick-prev {
+    left: -35px;
+  }
+  .slick-next {
+    right: -35px;
+  }
+}
+
+@media (max-width: 768px) {
+  .repo-carousel {
+    padding: 0.5rem 0;
+    min-height: 200px;
+  }
+  .carousel-slide {
+    padding: 0 5px;
+    max-width: 250px;
+  }
+  .no-results {
+    padding: 0.5rem;
+    min-height: 150px;
+    font-size: 0.9rem;
+  }
+  .slick-prev,
+  .slick-next {
+    width: 25px;
+    height: 25px;
+  }
+  .slick-prev:before,
+  .slick-next:before {
+    font-size: 14px;
+  }
+  .slick-prev {
+    left: -20px;
+  }
+  .slick-next {
+    right: -20px;
+  }
+  .slick-dots li button:before {
+    font-size: 6px;
+  }
+}
+
+@media (max-width: 480px) {
+  .repo-carousel {
+    padding: 0.3rem 0;
+    min-height: 180px;
+  }
+  .carousel-slide {
+    padding: 0 3px;
+    max-width: 200px;
+  }
+  .no-results {
+    padding: 0.5rem;
+    min-height: 120px;
+    font-size: 0.8rem;
+  }
+  .slick-prev,
+  .slick-next {
+    width: 20px;
+    height: 20px;
+  }
+  .slick-prev:before,
+  .slick-next:before {
+    font-size: 12px;
+  }
+  .slick-prev {
+    left: -15px;
+  }
+  .slick-next {
+    right: -15px;
+  }
+}

@@ -1,0 +1,71 @@
+/* src/components/RepoCard.css */
+.repo-card {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 20px;
+  padding: 1.5rem;
+  position: relative;
+  max-width: 300px;
+  height: 250px;
+  overflow: hidden;
+}
+
+.repo-card-content {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.star-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.star {
+  position: absolute;
+  background: #fff;
+  border-radius: 50%;
+}
+
+.repo-card-content h3 {
+  font-size: 1.2rem;
+  margin: 0 0 0.5rem;
+  color: #fff;
+  transition: transform 0.3s ease, color 0.3s ease; /* Animation properties */
+}
+
+.repo-card:hover .repo-card-content h3 {
+  transform: scale(1.1); /* Slightly enlarge title */
+  color: #88f3ff; /* Brighten to match theme */
+}
+
+.repo-card-content p {
+  font-size: 0.9rem;
+  margin: 0 0 0.5rem;
+  color: rgba(255, 255, 255, 0.8);
+  overflow: scroll;
+}
+
+.repo-card-content .repo-meta {
+  font-size: 0.8rem;
+  color: #88f3ff;
+  margin: 0 0 0.3rem;
+}
+
+.repo-card-content a {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  background: #88f3ff;
+  color: #0a0a23;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+  text-align: center;
+  margin-top: auto;
+}
