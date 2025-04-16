@@ -61,7 +61,6 @@ const RepoCarousel: React.FC<RepoCarouselProps> = ({ repos }) => {
               title={repo.title}
               description={repo.description}
               link={repo.link}
-              category=''
             />
           </div>
         ))}

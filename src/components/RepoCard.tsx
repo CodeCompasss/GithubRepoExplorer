@@ -6,7 +6,6 @@ interface RepoCardProps {
   title: string;
   description: string;
   link: string;
-  category: string;
 }
 
 const RepoCard: React.FC<RepoCardProps> = ({ title, description, link }) => {
