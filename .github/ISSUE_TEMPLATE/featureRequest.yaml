@@ -1,0 +1,78 @@
+name: Feature Request
+
+description: Suggest a new feature or enhancement for the web application.
+
+labels: ["enhancement", "new"]
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        # 🚀 Thank you for opening a feature request!
+
+        This issue tracker is dedicated to feature requests that enhance the core functionality of our web application.
+
+        **Before submitting:**
+        - Check the existing issues to avoid duplicates.
+        - Ensure your request aligns with the project's roadmap.
+        - If your request involves third-party services (e.g., API integrations), consider contacting the relevant provider.
+
+  - type: input
+    id: web-app-version
+    attributes:
+      label: Web Application Version
+      description: If applicable, specify the version of the web application where you need this feature.
+      placeholder: Example: v1.3.2 (or "latest" if using a cloud-based app)
+
+  - type: textarea
+    id: use-case
+    attributes:
+      label: Use Case
+      description: |
+        Describe the problem this feature would solve. 
+        - Focus on the **end goal** rather than the technical solution.
+        - Explain how users would benefit from this feature in a real-world scenario.
+    validations:
+      required: true
+
+  - type: textarea
+    id: current-limitations
+    attributes:
+      label: Current Limitations
+      description: |
+        Have you tried alternative solutions with the existing features? If so, what limitations did you face?
+        - Provide real examples of how the current setup is insufficient.
+        - Include screenshots, code snippets, or UI issues if relevant.
+    validations:
+      required: true
+
+  - type: textarea
+    id: proposed-solution
+    attributes:
+      label: Proposed Solution (Optional)
+      description: |
+        If you have an idea for how this feature should be implemented, describe it here.
+        - How would it work in the UI or API?
+        - Would it require new components, endpoints, or configurations?
+        - If unsure, just explain the ideal experience and we'll determine feasibility.
+    validations:
+      required: false
+
+  - type: textarea
+    id: references
+    attributes:
+      label: Related Issues or References
+      description: |
+        Are there similar feature requests or discussions? Provide links or references.
+        Example:
+        ```
+        - #124 (Similar request)
+        - [Figma Prototype](https://www.figma.com/...)
+        ```
+    validations:
+      required: false
+
+  - type: markdown
+    attributes:
+      value: |
+        **🔹 Note:** If the submit button is disabled, ensure all required fields are filled, including the **Title**.
