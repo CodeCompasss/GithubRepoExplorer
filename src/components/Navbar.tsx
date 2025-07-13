@@ -33,7 +33,7 @@ const Navbar: React.FC<NavbarProps> = ({ onSearch }) => {
   return (
     <nav className="navbar">
       <div className="navbar-container">
-        <Link to="/" className="navbar-logo">
+        <Link to="/GITHUBREPOEXPLORER/" className="navbar-logo">
           GitHub Explorer
         </Link>
 
@@ -48,7 +48,7 @@ const Navbar: React.FC<NavbarProps> = ({ onSearch }) => {
         <div className={`navbar-menu ${isMobileMenuOpen ? 'active' : ''}`}>
           <ul className="navbar-links">
             <li>
-              <Link to="/" onClick={toggleMobileMenu}>
+              <Link to="/GITHUBREPOEXPLORER/" onClick={toggleMobileMenu}>
                 Home
               </Link>
             </li>

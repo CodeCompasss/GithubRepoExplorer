@@ -39,7 +39,7 @@ const App: React.FC = () => {
         <ErrorBoundary>
           <Routes>
             <Route
-              path="/"
+              path="/GITHUBREPOEXPLORER/"
               element={
                 <>
                   <HeroSection onSearch={setSearchQuery} />
